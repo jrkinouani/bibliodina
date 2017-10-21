@@ -25,7 +25,7 @@ fr:
         unconfirmed_email:
         unlock_token: Clé de déblocage
         updated_at:
-          fullname: nom complet
+        full_name: nom complet
     models:
       user: Utilisateur
   devise:

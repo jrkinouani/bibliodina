@@ -1,4 +1,4 @@
-class BookController < ApplicationController
+class BooksController < ApplicationController
   before_action :set_book, only:[:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
 

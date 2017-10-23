@@ -2,14 +2,14 @@ CarrierWave.configure do |config|
    config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider:              'AWS',
-      aws_access_key_id:     "  AKIAIEWLQ4BLQOPBWSBQ",
-      aws_secret_access_key: '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',
-      region:                'ap-southeast-2',
-      host:                  's3-ap-southeast-2.amazonaws.com'
+      aws_access_key_id:     " AKIAJ72GRXKYPLX7ZQ7A ",
+      aws_secret_access_key: '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',
+      region:                'ap-south-1',
+      host:                  's3-ap-south-1.amazonaws.com'
 
     }
 
-    config.fog_directory  = 'caviarautonewserver'
+    config.fog_directory  = 'bibliorunreunion'
     config.fog_public     = false
     config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }
   end
@@ -19,4 +19,4 @@ CarrierWave.configure do |config|
   # disable CA-certificate check on Mac OSX
   ##########################################
     require 'excon'
-  Excon.ssl_verify_peer = false 
+  Excon.ssl_verify_peer = false

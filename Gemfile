@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave', '~> 1.0'
 gem 'fog'
 gem "fog-aws"
-gem 'rmagick', require: 'RMagick'
+gem 'rmagick', '~> 2.15', '>= 2.15.4'
 gem 'toastr-rails'
 gem 'rails-i18n'
 # Use Redis adapter to run Action Cable in production

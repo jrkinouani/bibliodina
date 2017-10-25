@@ -414,7 +414,7 @@ DEPENDENCIES
   rails (~> 5.1.4)
   rails-i18n
   rails_12factor
-  rmagick
+  rmagick (~> 2.15, >= 2.15.4)
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

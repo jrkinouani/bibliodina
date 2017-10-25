@@ -1,0 +1,21 @@
+<div class="container">
+<div class="row">
+  <div class="col-lg-4 col-offset-lg-4 col-md-4 col-md-offset-4">
+    <% @books.each do |book| %>
+    <%= image_tag(book.image, class: "avatar-full") %>
+
+     <h2><%= book.title %></h2>
+     <h2><%= book.author %></h2>
+     <h2><%= book.summery %></h2>
+     <h2><%= book.bonus %></h2>
+
+      <h2><%= book.user.full_name %></h2>
+    <% end %>
+
+ </div>
+</div>
+
+    <%= link_to "S'inscrire",  new_user_registration_path %>
+    <%= link_to "Connexion",  new_user_session_path %>
+    <%= link_to "Déconnexion",  destroy_user_session_path, method: :delete %>
+</div>

@@ -13,6 +13,17 @@
           <label>auteur du livre</label>
           <%= f.text_field :author,  class: "form-control", placeholder: "Nom de l'auteur" %>
         </div>
+
+        <div class="row">
+          <div class="col-lg-8 col-md-4">
+            <div class="form-group">
+              <span class="btn btn-default btn-file">
+                Upload ma photo
+              <%= f.file_field :image %>
+              </span>
+            </div>
+          </div>
+        </div>
         <div class="form-group">
             <label>Ajouter un résumé au livre</label>
           <%= f.text_area :summery,  class: "form-control", placeholder: "Résumé de votre livre" %>

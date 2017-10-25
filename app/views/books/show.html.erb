@@ -1,0 +1,23 @@
+<div class="container" id="show">
+  <div class="row">
+    <div class="col-md-8 col-md-8">
+        <%= image_tag(@book.image, class: "avatar-full") %>
+        <h2 class="title_show"><%= @book.title.capitalize %></h2>
+        <h2 ><%= @book.summery %></h2>
+      <h2><%= @book.author %> €</h2>
+      <h2><%= @book.user.full_name %></h2>
+      <h2 ><%= @book.bonus %></h2>
+    </div>
+
+
+    </div>
+ </div>
+
+    <!--comment-->
+
+
+    <h1><%= link_to "Edit", edit_book_path(@book) %></h1>
+    <h1><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "Are you sure"} %></h1>
+    <h1><%= link_to "Home", root_path %></h1>
+
+</div>

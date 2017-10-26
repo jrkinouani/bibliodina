@@ -9,6 +9,12 @@
             <label>Titre du livre</label>
           <%= f.text_field :title, class: "form-control", placeholder: "Titre de votre livre" %>
         </div>
+
+        <div class="form-group">
+            <label>Titre du livre</label>
+          <%=  f.collection_select :category_id, Category.all, :id, :genre,{promt: "Selectionnez une catégorie"}, class: "form-control", placeholder: "Titre de votre livre" %>
+        </div>
+
         <div class="form-group">
           <label>auteur du livre</label>
           <%= f.text_field :author,  class: "form-control", placeholder: "Nom de l'auteur" %>

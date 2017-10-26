@@ -3,7 +3,15 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @books = current_user.book
+    if params[:category].blank?
+      @books = Book.all.order("created_at DESC")
+    elsif
+      @category_id = Category.find_by(genre: params[:category]).id
+      @books = Book.where(category_id: @category_id).order("created_at DESC")
+    else
+      @category_id = Category.nil
+      render :root
+    end
   end
 
   def new
@@ -40,6 +48,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:author, :title, :summery, :bonus,:image, :active)
+    params.require(:book).permit(:author, :title, :summery, :bonus,:image, :category_id, :active)
   end
 end

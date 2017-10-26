@@ -1,20 +1,21 @@
 <div class="container">
+         <ul class="nav navbar-nav navbar" id="navabar-book">
+             <li><%= link_to "Tous les livres", root_path %></li>
+          <% Category.all.each do |category| %>
+          <li><%= link_to category.genre, books_path(category: category.genre) %></li>
+          <% end%>
+      </ul>
+
   <% @books.each do |book| %>
 <div class="row">
   <div class="col-lg-3  col-md-3 ">
+    <div class="text-center">
     <%= link_to (image_tag(book.image, class:"card-img-top")), book %>
-      <h5><%= book.title %></h5>
-
-     <h5>Par <%= book.author %></h5>
-
-      <h5> Ajouté par<%= image_tag(book.user.avatar, class: "img-circle avatar-small") %> <%= book.user.full_name %></h5>
-
-
- </div>
- <% end %>
+    </div>
+      <h5 class="book_title"><%= book.title.capitalize %></h5>
+      <h5 class="author">Par <%= book.author %></h5>
+      <h5 class="full_name"> Ajouté par <%= book.user.full_name %></h5>
+    </div>
+    <% end %>
 </div>
-
-    <%= link_to "S'inscrire",  new_user_registration_path %>
-    <%= link_to "Connexion",  new_user_session_path %>
-    <%= link_to "Déconnexion",  destroy_user_session_path, method: :delete %>
 </div>

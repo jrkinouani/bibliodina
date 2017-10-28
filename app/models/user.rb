@@ -7,5 +7,6 @@ class User < ApplicationRecord
   validates :full_name, presence: true, length: {maximum: 65}
 
   has_many :books
+  has_many :reservations
 
 end

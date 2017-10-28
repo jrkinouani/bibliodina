@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  book: one
+  start_date: 2017-10-28 12:13:16
+  end_date: 2017-10-28 12:13:16
+  total: 1
+
+two:
+  user: two
+  book: two
+  start_date: 2017-10-28 12:13:16
+  end_date: 2017-10-28 12:13:16
+  total: 1

@@ -2,7 +2,7 @@
          <ul class="nav navbar-nav navbar" id="navabar-book">
              <li><%= link_to "Tous les livres", root_path %></li>
           <% Category.all.each do |category| %>
-          <li><%= link_to category.genre, books_path(category: category.genre) %></li>
+          <li><%= link_to category.genre, root_path(category: category.genre) %></li>
           <% end%>
       </ul>
 

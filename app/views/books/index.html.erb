@@ -1,27 +1,39 @@
 <div class="container">
-  <ul class="nav navbar-nav navbar">
+  <div class="row">
+    <div class="col-lg-3 col-md-3">
+      <ul class="sidebar-list">
+        <li class="sidebar-item"><%=  link_to "Mes livres", books_path ,class: "sidebar-link active" %></li>
+      </ul>
+    </div>
+    <div class="col-lg-9 col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">Mes livres</div>
+        <div class="panel-body">
+          <div class="row">
+            <% @books.each do |book| %>
+            <div class="col-lg-2 col-md-2">
+                <%= link_to (image_tag book.image.url,class:"card-img-top"), book%><br/>
+            </div>
+            <div class="col-lg-offset-1 col-lg-6 col-md-6">
+              <h4 class="card-title"><%= book.title.capitalize   %></h4>
+            </div>
+            <div class="col-lg-3 col-md-3 right">
+              <%= link_to "Mettre à jour ", edit_book_path(book), class:"btn btn-primary"%>
+            </div>
+            <hr>
+        </div>
+
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <!--<ul class="nav navbar-nav navbar">
     <li><%= link_to "Tous les livres", root_path %></li>
  <% Category.all.each do |category| %>
  <li><%= link_to category.genre, books_path(category: category.genre.capitalize) %></li>
  <% end%>
-</ul>
-  <div class="row">
-    <% @books.each do |book| %>
-    <div class="col-sm-6 col-md-4 col-lg-4 mt-4">
-     <div class="card">
-      <%= link_to (image_tag book.image.url,class:"card-img-top"), book%><br/>
-      <div class="card-block">
-          <h4 class="card-title"><%= book.title.capitalize   %></h4>
-          <div class="card-text">
-            <%= book.summery %> papa
-          </div>
-      </div>
-        <div class="card-footer">
-
-          <span class="float-right"><%= button_to "Voir le menu", book, class: "btn btn-primary navbar-btn", :method => :get  %>  </span>
-        </div>
-     </div>
-    </div>
-    <% end %>
-  </div>
-  </div>
+</ul>-->

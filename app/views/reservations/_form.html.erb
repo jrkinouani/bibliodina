@@ -1,8 +1,58 @@
-<%= form_for([@book, @book.reservations.new]) do |f| %>
-    <%= f.text_field :start_date %>
-    <%= f.text_field :end_date %>
 
-    <%= f.hidden_field :book_id, value: @book.id %>
+    <%= form_for([@book, @book.reservations.new]) do |f| %>
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+         <label>Début de réservation</label><br>
+          <%= f.date_field :start_date, placeholder: 'jj/mm/aaaa', class: 'form-control' %>
+          <br>
+         <label>Fin de réservation</label>
+          <%= f.date_field :end_date, placeholder: 'jj/mm/aaaa', class: 'form-control' %>
+        </div>
+    </div>
 
-    <%=  f.submit "Demande de réservation", class: "btn btn-primary" %>
-<% end %>
+    <div id="preview " style="display: none">
+      <br>
+      <table class="reservation_table">
+        <tbody>
+         <tr>
+           <td>Nombre de jour(s)</td>
+           <td><span id="reservation_days"></span></td>
+         </tr>
+         <tr>
+           <td>Total</td>
+           <td><span id="reservation_sum"></span></td>
+         </tr>
+        </tbody>
+      </table>
+    </div>
+        <%= f.hidden_field :book_id, value: @book.id %>
+        <%= f.hidden_field :book_id, id:'reservation_total' %>
+        <br/>
+        <%=  f.submit "Demande de réservation", class: "btn btn-primary wide" %>
+    <% end %>
+
+    <script>
+     $(function() {
+           $('reservation_start_date').datepicker({
+
+                               dateFormat: 'dd-mm-yy',
+
+                               monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+
+                              dayNames: ['Dimache', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
+
+            });
+         $('reservation_end_date').datepicker({
+
+                              dateFormat: 'dd-mm-yy',
+
+                              monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+
+                              dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi']
+
+
+           });
+
+     });
+
+     </script>

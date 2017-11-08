@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
 
   root "pages#home"
+  get'all' => "pages#all"
 
   resources :users, only: [:show]
   resources :books do

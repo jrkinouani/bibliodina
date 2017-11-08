@@ -28,6 +28,7 @@ gem 'toastr-rails'
 gem 'rails-i18n'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'jquery-ui-rails'
+gem "figaro"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

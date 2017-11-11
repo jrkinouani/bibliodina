@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root "pages#home"
   get'all' => "pages#all"
   get '/preload' => "reservations#preload"
+  get '/preview' => "reservations#preview"
 
+  
   resources :users, only: [:show]
   resources :books do
     resources :reservations, only: [:create]

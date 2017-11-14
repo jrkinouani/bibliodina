@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   get'all' => "pages#all"
   get '/preload' => "reservations#preload"
   get '/preview' => "reservations#preview"
+  get '/mes_emprunts' => "reservations#vos_emprunts"
+  get '/mes_reservations' => "reservations#mes_reservations"
 
-  
   resources :users, only: [:show]
-  resources :books do
+  resources :books, path: "livres" do
     resources :reservations, only: [:create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

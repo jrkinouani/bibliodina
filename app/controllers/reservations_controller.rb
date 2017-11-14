@@ -26,6 +26,14 @@ class ReservationsController < ApplicationController
     redirect_to  @reservation.book, notice: "Votre réservation a été acceptée"
   end
 
+  def vos_emprunts
+    @emprunts = current_user.reservations
+  end
+
+  def mes_reservations
+    @books = current_user.books
+  end
+
   private
 
   def reservation_params

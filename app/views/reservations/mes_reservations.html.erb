@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+        <ul class="sidebar-list">
+          <li class="sidebar-item"><%=  link_to "Mes livres", books_path ,class: "sidebar-link active" %></li>
+          <li class="sidebar-item"><%=  link_to "Mes réservations", mes_reservations_path ,class: "sidebar-link active" %></li>
+              <li class="sidebar-item"><%=  link_to "Mes emprunts", mes_emprunts_path ,class: "sidebar-link active" %></li>
+        </ul>
+    </div>
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading"> Mes réservations</div>
+            <div class="panel-body">
+                <% @books.each do |book| %>
+                <% book.reservations.order("id DESC").each do |reservation| %>
+                <div class="row">
+                   <div class="col-md-2">
+                       Du <%= reservation.start_date.strftime('%d.%m.%y') %> au <%= reservation.end_date.strftime('%d.%m.%y') %>
+                   </div>
+                   <div class="col-md-6">
+                     <%= link_to book_path(reservation.book) do %>
+                      <%= image_tag(reservation.book.image, class:"card-img-top") %>
+                       <% end %>
+                   </div>
+                   <div class="col-md-4">
+                     <%= link_to user_path(reservation.book.user) do  %>
+                     <%= image_tag(reservation.user.avatar, class:"img-circle avatar-small") %>
+                     <%= reservation.user.full_name %>
+                       <% end %>
+                   </div>
+
+                </div>
+                <hr>
+                <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

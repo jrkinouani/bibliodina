@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-  <div class="text-center">
+  <div class="col-lg-3  col-md-3">
     <ul class="sidebar-list">
       <li class="sidebar-item"><%=  link_to "Mes livres", books_path ,class: "sidebar-link active" %></li>
     </ul>
@@ -11,7 +11,7 @@
   <div class="col-lg-3  col-md-3 ">
     <div class="text-center">
     <%= link_to (image_tag(book.image, class:"card-img-top")), book %>
-    
+
       <h5 class="book_title"><%= book.title.capitalize %></h5>
       <h5 class="author">Par <%= book.author %></h5>
 

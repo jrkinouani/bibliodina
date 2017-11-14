@@ -24,8 +24,9 @@
           <div class="col-lg-8 col-md-4">
             <div class="form-group">
               <span class="btn btn-default btn-file">
-                Upload ma photo
-              <%= f.file_field :image %>
+
+                <img id="img_prev" src="#" alt="Téléchargez une image" />
+              <%= f.file_field :image, type:"file", onchange:"readURL(this);" %>
               </span>
             </div>
           </div>
@@ -51,3 +52,20 @@
     </div>
   </div>
 </div>
+
+<script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $('#img_prev')
+              .attr('src', e.target.result)
+              .width(150)
+              .height(200);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>

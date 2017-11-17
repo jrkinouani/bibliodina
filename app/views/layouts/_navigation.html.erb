@@ -11,8 +11,33 @@
 
            <!--<%= link_to 'Bibliorun', root_path,{:class=> "navbar-brand" } %>-->
            <%= link_to (image_tag("/chap_dec_ok.png", class:"navbar-brand")),root_path %>
+
          </div>
+
          <div id="navbar" class="navbar-collapse collapse">
+           <div class="col-lg-6 col-sm-3 col-md-4" id="form_search">
+             <!--<div class="input-group">
+             <input type="text" class="form-control" placeholder="Cherchez un livre..." name="q">
+               <div class="input-group-btn">
+               <button class="btn btn-danger btn-md" type="button">
+                <span class=" glyphicon glyphicon-search"></span>
+               </button>
+               </div>
+             </div>-->
+
+            <%= form_tag(search_path, method: "get", class: "search-discover js-form-search-location search-discover--hero", role: "form") do %>
+             <div class="search-discover__inner">
+               <%= text_field_tag :search, params[:search], class:"search-discover__input-location js-location", placeholder: "Chercher un livre, un auteur, un mot clé..." %>
+               <button type="submit" class="btn btn-danger btn-lg" data-ga-category="Home" data-ga-action="Search">
+                 <i class="fa fa-search visible-xs"></i>
+                   <span class=" glyphicon glyphicon-search"></span>
+               </button>
+
+             </div>
+            <% end %>
+
+
+           </div>
            <ul class="nav navbar-nav navbar-right">
              <% if (!user_signed_in?) %>
              <li><%= link_to "inscription",  new_user_registration_path %></li>

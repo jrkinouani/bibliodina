@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/preview' => "reservations#preview"
   get '/mes_emprunts' => "reservations#vos_emprunts"
   get '/mes_reservations' => "reservations#mes_reservations"
+  get "/search" => "pages#search"
 
   resources :users, only: [:show]
   resources :books, path: "livres" do

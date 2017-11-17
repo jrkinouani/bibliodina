@@ -1,14 +1,16 @@
 <div class="container" id="show">
   <div class="row">
-    <div class="col-lg-8 col-md-8">
+    <div class="col-lg-2 col-md-2">
         <%= image_tag(@book.image, class: "avatar-full") %>
+    </div>
+    <div class="col-lg-6 col-md-6">
         <h2 class="title_show"><%= @book.title.capitalize %></h2>
-        <h2 ><%= @book.summery %></h2>
-      <h2><%= @book.author %> €</h2>
-      <h2><%= @book.user.full_name %></h2>
-      <h2 ><%= @book.bonus %></h2>
+        <h4 class="summery_show" ><%= @book.summery %></h4>
+      <!--<h2><%= @book.user.full_name %></h2>
+      <h2 ><%= @book.bonus %></h2>-->
 
     </div>
+
     <div class="col-lg-4 col-md-4">
       <%= render 'reservations/form' %>
     </div>

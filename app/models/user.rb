@@ -8,5 +8,5 @@ class User < ApplicationRecord
 
   has_many :books
   has_many :reservations
-
+  has_many :reviews
 end

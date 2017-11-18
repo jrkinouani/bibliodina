@@ -11,7 +11,7 @@
         </div>
 
         <div class="form-group">
-            <label>Titre du livre</label>
+            <label>catégorie</label>
           <%=  f.collection_select :category_id, Category.all, :id, :genre,{promt: "Selectionnez une catégorie"}, class: "form-control", placeholder: "Titre de votre livre" %>
         </div>
 

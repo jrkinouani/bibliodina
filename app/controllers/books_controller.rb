@@ -25,6 +25,11 @@ class BooksController < ApplicationController
   end
 
   def show
+    @booked = Reservation.where("book_id = ? AND user_id = ? ", @book.id, current_user.id).present?
+    if current_user
+      @reviews = @book.reviews
+      @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
+    end
   end
 
   def edit

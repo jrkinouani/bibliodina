@@ -1,0 +1,14 @@
+<% if @reviews.count == 0 %>
+  <div class="text-center">
+    <h4>Aucun commentaire </h4>
+  </div>
+<% else %>
+  <% @reviews.order("id DESC").each do |f|%>
+  <hr>
+  <dvi class="row">
+    <div class="col-md-1">
+      
+    </div>
+  </div>
+  <% end %>
+<% end %>

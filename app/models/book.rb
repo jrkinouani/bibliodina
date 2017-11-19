@@ -1,12 +1,12 @@
 class Book < ApplicationRecord
   belongs_to :user
-  belongs_to :category
+  belongs_to :genre
   has_many :reservations
   has_many :reviews
 
   def self.search(search)
      where("title LIKE ?", "%#{search}%")
-     where("author LIKE ?", "%#{search}%")
+
   end
 
   mount_uploader :image, ImageUploader

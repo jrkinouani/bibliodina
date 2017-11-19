@@ -27,7 +27,7 @@
 
             <%= form_tag(search_path, method: "get", class: "search-discover js-form-search-location search-discover--hero", role: "form") do %>
              <div class="search-discover__inner">
-               <%= text_field_tag :search, params[:search], class:"search-discover__input-location js-location", placeholder: "Chercher un livre, un auteur, un mot clé..." %>
+               <%= text_field_tag :search, params[:search], class:"search-discover__input-location js-location", placeholder: "Chercher un livre par son titre" %>
                <button type="submit" class="btn btn-danger btn-lg" data-ga-category="Home" data-ga-action="Search">
                  <i class="fa fa-search visible-xs"></i>
                    <span class=" glyphicon glyphicon-search"></span>

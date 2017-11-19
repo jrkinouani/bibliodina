@@ -4,11 +4,11 @@ class PagesController < ApplicationController
   end
 
   def all
-    if params[:category].blank?
+    if params[:genre].blank?
       @books = Book.all.order("created_at DESC")
     else
-      @category_id = Category.find_by(genre: params[:category]).id
-      @books = Book.where(category_id: @category_id).order("created_at DESC")
+      @genre_id = Genre.find_by(name: params[:genre]).id
+      @books = Book.where(genre_id: @genre_id).order("created_at DESC")
     end
   end
 

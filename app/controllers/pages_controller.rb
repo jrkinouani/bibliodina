@@ -3,6 +3,9 @@ class PagesController < ApplicationController
     @books = Book.all
   end
 
+  def charte
+  end
+
   def all
     if params[:genre].blank?
       @books = Book.all.order("created_at DESC")

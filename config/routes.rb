@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root "pages#home"
   get'all' => "pages#all"
+  get '/charte' => "pages#charte"
   get '/preload' => "reservations#preload"
   get '/preview' => "reservations#preview"
   get '/mes_emprunts' => "reservations#vos_emprunts"
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
   resources :books, path: "livres" do
     resources :reservations, only: [:create]
     resources :reviews, only: [:create, :destroy]
-    
+
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

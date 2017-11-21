@@ -9,9 +9,9 @@
          </div>
        </div>
      </div>
-   </header>
+</header>
 
-  <div class="container">
+<div class="container">
            <ul class="nav navbar-nav navbar" id="navabar-book">
                <li><%= link_to "Tous les livres", root_path %></li>
             <% Genre.all.each do |genre| %>
@@ -20,15 +20,15 @@
         </ul>
 
   <% @books.each do |book| %>
-<div class="row">
-  <div class="col-lg-3  col-md-3 ">
-    <div class="text-center">
-    <%= link_to (image_tag(book.image, class:"card-img-top")), book %>
+    <div class="row">
+      <div class="col-lg-3  col-md-3 ">
+        <div class="text-center">
+        <%= link_to (image_tag(book.image, class:"card-img-top")), book %>
+        </div>
+          <h5 class="book_title"><%= book.title %></h5>
+          <h5 class="author">Par <%= book.author %></h5>
+          <h5 class="full_name"> Ajouté par <%= book.user.full_name %></h5>
+        </div>
+        <% end %>
     </div>
-      <h5 class="book_title"><%= book.title %></h5>
-      <h5 class="author">Par <%= book.author %></h5>
-      <h5 class="full_name"> Ajouté par <%= book.user.full_name %></h5>
-    </div>
-    <% end %>
-</div>
 </div>

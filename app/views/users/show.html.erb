@@ -31,6 +31,24 @@
               </div>
               <% end %>
             </div>
+            <h4>Evaluations</h4><br>
+            <% @books.each do |book| %>
+              <% if !book.reviews.blank? %>
+                <% book.reviews.each do |review| %>
+                <div class="row">
+                    <div class="col-md-2 col-lg-2 text-center">
+                     <%= image_tag(review.user.avatar, class:"img-circle avatar-medium") %><br>
+                     <%= review.user.full_name %>
+                    </div>
+                    <div class="col-md-10 col-lg-10 ">
+                     <%= link_to book.title, book %><br>
+                     <%= review.comment %><br>
+                     <%= review.created_at.strftime("%d/%m/%y")%>
+                    </div>
+                </div>
+                  <% end %>
+              <% end %>
+            <% end %>
        </div>
    </div>
 </div>

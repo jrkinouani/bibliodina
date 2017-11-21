@@ -18,9 +18,9 @@
     </div>
 
     <div class="row">
-      <div class="col-lg-12 col-md-12">
+      <div class="col-lg-8 col-md-8">
 
-        <h3>Commentaires <%= @book.average_rating %> (<%= @reviews.count %>)</h3>
+        <h3> <%= pluralize( @reviews.count, "Commentaire") %><br> Note: <%= @book.average_rating %> (<%= @reviews.count %>) </h3>
         <div class="container">
           <div>
           <%= render "reviews/form" if @booked && !@hasReview %>

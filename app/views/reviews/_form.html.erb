@@ -1,8 +1,8 @@
 <%= form_for([@book, @book.reviews.new]) do |f| %>
-  <%= f.text_field :star %>
-  <%= f.text_field :comment %>
+  <%= f.text_field :star , placeholder: "notez de 1 à 5"%>
+  <%= f.text_area :comment, rows: 3 , class:"form-control" %>
   <%= f.hidden_field :book_id, value: @book.id %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Evaluez", class:"btn  btn-primary" %>
   </div>
 <% end %>

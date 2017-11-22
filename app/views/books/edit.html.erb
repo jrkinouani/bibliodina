@@ -19,16 +19,19 @@
           <label>auteur du livre</label>
           <%= f.text_field :author,  class: "form-control", placeholder: "Nom de l'auteur" %>
         </div>
+
         <div class="row">
           <div class="col-lg-8 col-md-4">
             <div class="form-group">
               <span class="btn btn-default btn-file">
-                Upload ma photo
-              <%= f.file_field :image %>
+
+                <img id="img_prev" src="#" alt="Téléchargez une image" />
+              <%= f.file_field :image, type:"file", onchange:"readURL(this);" %>
               </span>
             </div>
           </div>
         </div>
+
         <div class="form-group">
             <label>Ajouter un résumé au livre</label>
           <%= f.text_area :summery,  class: "form-control", placeholder: "Résumé de votre livre" %>
@@ -38,9 +41,9 @@
           <%= f.text_field :bonus, class: "form-control", placeholder: "Il est excellent car..." %>
         </div>
 
-        <div class="form-group">
+        <!--<div class="form-group">
           <%= f.check_box :active %> Livre visible
-        </div>
+        </div>-->
 
         <div class="actions">
           <%= f.submit "J'enregistre mon livre", class:"btn btn-primary" %>
@@ -50,3 +53,20 @@
     </div>
   </div>
 </div>
+
+<script>
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+            $('#img_prev')
+              .attr('src', e.target.result)
+              .width(150)
+              .height(200);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+        }
+      }
+    </script>

@@ -2,21 +2,27 @@
   <div class="row">
   <div class="col-lg-3  col-md-3">
     <ul class="sidebar-list">
-      <li class="sidebar-item"><%=  link_to "Mes livres", books_path ,class: "sidebar-link active" %></li>
+      <li class="sidebar-item"><%=  link_to "Mes livres", books_path ,class: "sidebar-link active" %> (<%= @books.length %>)</li>
     </ul>
   </div>
 </div>
+  <% if @books.blank? %>
+    <h3 class="no_city">Désolé il n'y pas de livre "</br> </h3>
+    <% else %>
   <% @books.each do |book| %>
-<div class="row">
-  <div class="col-lg-3  col-md-3 ">
-    <div class="text-center">
-    <%= link_to (image_tag(book.image, class:"card-img-top")), book %>
+    <div class="row">
+      <div class="col-lg-3  col-md-3 ">
 
-      <h5 class="book_title"><%= book.title.capitalize %></h5>
-      <h5 class="author">Par <%= book.author %></h5>
+        <div class="text-center">
+        <%= link_to (image_tag(book.image, class:"card-img-top")), book %>
 
-      <%= link_to "Mettre à jour ", edit_book_path(book), class:"btn btn-primary"%>
-    </div></div>
+          <h5 class="book_title"><%= book.title.capitalize %></h5>
+          <h5 class="author">Par <%= book.author %></h5>
+
+          <%= link_to "Mettre à jour ", edit_book_path(book), class:"btn btn-primary"%>
+        </div></div>
+        <% end %>
+    </div>
     <% end %>
-</div>
+
 </div>

@@ -19,9 +19,12 @@
             <% end%>
         </ul>
 
+<div class="row">
+  <h3>Derniers livres ajoutées</h3>
+</div>
+<div class="row">
   <% @books.each do |book| %>
-    <div class="row">
-      <div class="col-lg-3  col-md-3 ">
+      <div class="col-lg-3  col-md-3 "  id="row_book">
         <div class="text-center">
         <%= link_to (image_tag(book.image, class:"card-img-top")), book %>
         </div>
@@ -29,6 +32,7 @@
           <h5 class="author">Par <%= book.author %></h5>
           <h5 class="full_name"> Ajouté par <%= book.user.full_name %></h5>
         </div>
+
         <% end %>
     </div>
 </div>

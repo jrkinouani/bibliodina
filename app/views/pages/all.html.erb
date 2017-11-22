@@ -6,9 +6,9 @@
           <% end%>
       </ul>
 
-  <% @books.each do |book| %>
 <div class="row">
-  <div class="col-lg-3  col-md-3 ">
+  <% @books.each do |book| %>
+  <div class="col-lg-3  col-md-3 " id="row_book">
     <div class="text-center">
     <%= link_to (image_tag(book.image, class:"card-img-top")), book %>
     </div>

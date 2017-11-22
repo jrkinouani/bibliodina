@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-      @books = Book.all.order("created_at DESC")
+    @books = @user.books
   end
 
   def new

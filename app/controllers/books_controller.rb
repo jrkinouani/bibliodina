@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    @books = @user.books
+      @books = current_user.books
   end
 
   def new

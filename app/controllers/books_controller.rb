@@ -3,12 +3,7 @@ class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:show]
 
   def index
-    if params[:genre].blank?
       @books = Book.all.order("created_at DESC")
-    else
-      @genre_id = Genre.find_by(name: params[:genre]).id
-      @books = Book.where(genre_id: @genre_id).order("created_at DESC")
-    end
   end
 
   def new

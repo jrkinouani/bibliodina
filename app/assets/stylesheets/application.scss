@@ -3,8 +3,10 @@
 @import "toastr";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
-
+nav.navbar.navbar-default
+{
+  margin-bottom: 0px;
+}
  .navbar-brand {
      float: left;
      padding: 15px 15px;
@@ -348,6 +350,29 @@ h2.title_show
     line-height: 38px;
     margin: 0px;
     font-family: Merriweather,Georgia,"Times New Roman",Times,serif;
+}
+h4.summery_show
+{
+  font-size: 16px;
+   line-height: 21px;
+   overflow-y: hidden;
+   max-height: 169px;
+  cursor: pointer;
+    color: white;
+}
+
+/* page show book*/
+
+#show.container-fluid
+{
+  padding-top: 30px;
+  background-position: center center;
+  background-image: url( /fond.jpg);
+  height: 420px;
+  background-size: cover;
+  background-repeat:no-repeat;
+  color: white;
+
 }
 /*form search*/
 .search-discover__input-location

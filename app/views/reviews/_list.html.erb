@@ -6,11 +6,11 @@
   <% @reviews.order("id DESC").each do |r|%>
   <hr>
   <dvi class="row">
-    <div class="col-md-2">
+    <div class="col-md-1 col-md-offset-2">
        <%= image_tag(r.user.avatar, class:"img-circle avatar-medium") %>
 
     </div>
-    <dic class="col-md-10">
+    <dic class="col-md-6">
         <div>
           <strong><%= r.user.full_name%> <br>Livre noté <%= r.star %>/ 5</strong>
           <span class="pull-right">

@@ -1,24 +1,25 @@
-<div class="container" id="show">
+<div class="container-fluid" id="show">
+  <div class="container" >
   <div class="row">
-    <div class="col-lg-2 col-md-2">
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
         <%= image_tag(@book.image, class: "avatar-full") %>
     </div>
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8">
         <h2 class="title_show"><%= @book.title.capitalize %></h2>
-        <h4 class="summery_show" ><%= @book.summery %></h4>
-        <h2 ><%= @book.bonus %></h2>
+        <h4 class="summery_show" ><%= @book.summery %></h4><br>
+        <h4 class="summery_show">Mon avis :<br><%= @book.bonus %></h4>
       <!--<h2><%= @book.user.full_name %></h2>-->
 
     </div>
-
-    <div class="col-lg-4 col-md-4">
-      <%= render 'reservations/form' %>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" >
+        <%= render 'reservations/form' %>
+      </div>
     </div>
-
-    </div>
-
+</div>
+</div>
+<div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-8">
+      <div class="col-lg-8 col-md-8 col-sm-4 col-xs-10">
 
         <h3> <%= pluralize( @reviews.count, "Commentaire") %><br> Note: <%= @book.average_rating %> (<%= @reviews.count %>) </h3>
         <div class="container">

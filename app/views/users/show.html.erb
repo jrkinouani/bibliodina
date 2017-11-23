@@ -3,14 +3,15 @@
       <div class="col-md-3">
          <%= image_tag(@user.avatar, class: "avatar-full") %>
           <div class="panel panel-default">
-          <div class="panel-heading">Vérification</div>
+          <div class="panel-heading">Qui suis-je</div>
             <div class="panel-body">
-                   Email: <%= @user.email %><br>
+              <h4><%= @user.full_name.capitalize %></h4>
+              <br>
             </div>
           </div>
       </div>
       <div class="col-md-9">
-            <h2><%= @user.full_name.capitalize %></h2>
+
             <hr>
             <div class="description row-space-3">
                   <%= @user.description.capitalize %>

@@ -18,7 +18,7 @@
       <% if devise_mapping.rememberable? -%>
         <div class="form-group">
           <%= f.check_box :remember_me %> Se souvenir de moi
-        
+
         </div>
       <% end -%>
 
@@ -26,5 +26,9 @@
         <%= f.submit "Connexion", class: "btn btn-primary" %>
       </div>
     <% end %>
+    <br>
+      <div class="text-center">
+        <h5><%= link_to "Vous n'avez pas de compte ? Inscrivez-vous", new_user_registration_path %></h5>
+      </div>
 </div>
 </div>

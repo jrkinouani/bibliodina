@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only:[:show, :edit, :update]
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, 
 
   def index
       @books = current_user.books
@@ -24,7 +24,9 @@ class BooksController < ApplicationController
     if current_user
       @reviews = @book.reviews
       @hasReview = @reviews.find_by(user_id: current_user.id) if current_user
+
     end
+
   end
 
   def edit

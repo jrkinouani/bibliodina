@@ -6,6 +6,9 @@ class PagesController < ApplicationController
 
   def charte
   end
+  def apropos
+
+  end
 
   def all
     if params[:genre].blank?

@@ -3,9 +3,10 @@ Rails.application.routes.draw do
                     :path_names=> {:sign_in=>"login", :sign_out=>"logout", :edit=>"profil"}
 
   root :to => 'pages#home'
-  
+
   get'all' => "pages#all"
   get '/charte' => "pages#charte"
+  get '/apropos' => "pages#apropos"
   get '/preload' => "reservations#preload"
   get '/preview' => "reservations#preview"
   get '/mes_emprunts' => "reservations#vos_emprunts"

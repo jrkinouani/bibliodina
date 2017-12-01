@@ -16,7 +16,8 @@
         <%= link_to (image_tag(book.image, class:"card-img-top")), book %>
           <h5 class="book_title"><%= book.title.capitalize %></h5>
           <h5 class="author">Par <%= book.author %></h5>
-          <%= link_to "Mettre à jour ", edit_book_path(book), class:"btn btn-primary"%>
+          <%= link_to "Mettre à jour ", edit_book_path(book), class:"btn btn-primary"%></br>
+          <%= link_to "Supprimer votre livre", book, :confirm => "Etes vous sur ?", :method => :delete ,class:"btn btn-primary hh"%>
         </div></div>
         <% end %>
     </div>

@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
-  before_action :set_book, only:[:show, :edit, :update]
-  before_action :authenticate_user!, 
+  before_action :set_book, only:[:show, :edit, :update,:destroy]
+  before_action :authenticate_user!,
 
   def index
       @books = current_user.books
@@ -20,6 +20,7 @@ class BooksController < ApplicationController
   end
 
   def show
+      @book = Book.find(params[:id])
     @booked = Reservation.where("book_id = ? AND user_id = ? ", @book.id, current_user.id).present?
     if current_user
       @reviews = @book.reviews
@@ -38,6 +39,12 @@ class BooksController < ApplicationController
     else
         render :edit
     end
+  end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to books_path, notice: "Votre livre a été supprimé"
   end
 
   private

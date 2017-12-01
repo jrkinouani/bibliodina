@@ -285,6 +285,25 @@ h3.full_name
   display: block;
 
   }
+  /*page index */
+  .btn-primary.btn {
+    border: 1px solid #ff5a5f;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: #ff5a5f;
+    color: #fff;
+    padding: 10px 25px 10px 25px;
+    margin-bottom: 20px;
+}
+.btn-primary.btn.hh {
+  border: 1px solid #008489;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #008489;
+  color: #fff;
+  padding: 10px 25px 10px 25px;
+  margin-bottom: 20px;
+}
   /*page home*/
   #row_book
   {

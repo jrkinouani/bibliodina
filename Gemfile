@@ -10,8 +10,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'devise-i18n'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 # Use CoffeeScript for .coffee assets and views
@@ -29,6 +27,7 @@ gem 'rails-i18n'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'jquery-ui-rails'
 gem "figaro"
+gem 'rails_admin', '~> 1.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

@@ -1,8 +1,8 @@
 class Book < ApplicationRecord
   belongs_to :user
   belongs_to :genre
-  has_many :reservations ,dependent: :delete_all
-  has_many :reviews  ,dependent: :delete_all
+  has_many :reservations ,dependent: :destroy
+  has_many :reviews  ,dependent: :destroy
 
   def self.search(search)
      where("title LIKE ?", "%#{search}%")

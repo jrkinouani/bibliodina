@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   root :to => 'pages#home'
 
+
   get'all' => "pages#all"
   get '/charte' => "pages#charte"
   get '/apropos' => "pages#apropos"

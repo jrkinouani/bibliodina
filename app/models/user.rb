@@ -6,7 +6,8 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   validates :full_name, presence: true, length: {maximum: 65}
 
-  has_many :books
+  has_many :books 
   has_many :reservations
   has_many :reviews
+
 end

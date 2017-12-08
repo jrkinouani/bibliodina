@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-
-  ActiveAdmin.routes(self)
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
+  devise_for :admin_users, {class_name: 'AdminUser'}.merge(ActiveAdmin::Devise.config)
   
+  ActiveAdmin.routes(self)
+
+
   devise_for :users, :path => '',
                     :path_names=> {:sign_in=>"login", :sign_out=>"logout", :edit=>"profil"}
 

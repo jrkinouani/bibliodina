@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   def home
-    @books = Book.all
-    #@books = Book.order("RANDOM()").limit(2)
+    #@books = Book.all
+    @books = Book.order("RANDOM()")
+
   end
 
   def charte

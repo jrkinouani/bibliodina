@@ -14,7 +14,5 @@ module Biblio
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.assets.initialize_on_precompile = false
-    config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js']
   end
 end

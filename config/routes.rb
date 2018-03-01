@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :admin
   devise_for :users, :path => '',
-                    :path_names=> {:sign_in=>"login", :sign_out=>"logout", :edit=>"profil"}
+                    :path_names=> {:sign_in=>"login", :sign_out=>"logout", :edit=>"profil"},
+                    :controller=>{:confirmations=>"confirmation"}
 
   root :to => 'pages#home'
 

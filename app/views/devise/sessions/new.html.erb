@@ -6,12 +6,10 @@
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
-
         <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "adresse email" %>
       </div>
 
       <div class="form-group">
-
         <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "mot de passe" %>
       </div>
 
@@ -24,11 +22,14 @@
 
       <div class="actions">
         <%= f.submit "Connexion", class: "btn btn-primary" %>
+        <br>
+        <br>
+        <%=  link_to "Connexion impossible ?", new_user_password_path, class:"btn btn-primary"%>
       </div>
     <% end %>
     <br>
-      <div class="text-center">
+      <!--<div class="text-center">
         <h5><%= link_to "Vous n'avez pas de compte ? Inscrivez-vous", new_user_registration_path %></h5>
-      </div>
+      </div>-->
 </div>
 </div>

@@ -40,17 +40,17 @@
         <%= f.email_field :email, rows:5, col:25 , autofocus: true, class: "form-control", placeholder: "Adresse email" %>
       </div>
         <br />
-      <div class="field">
+      <div class="form-group">
         <%= f.label :password %><br />
         <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Nouveau mot de passe (si vous souhaitez change de mot de passe)" %>
       </div>
 
-      <div class="field">
+      <div class="form-group">
         <%= f.label :password_confirmation %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control", placeholder: "Confirmaton du mot de passe" %>
       </div>
 
-      <div class="field">
+      <div class="form-group">
       <br />
       <%= f.label :current_password %><br />
         <%= f.password_field :current_password, autocomplete: "off",class: "form-control", placeholder: "Mot de passe actuel (pour confirmer tout changement)" %>
@@ -61,6 +61,17 @@
       </div>
     <% end %>
 
+      <% unless current_user.confirmed_at%>
+        <br/><br/>
+        <% form_for(resource, as: resource_name, url: confirmation_path(resource_name), html:
+        {method: :post}) do |f| %>
+        <%= f.hidden_field :email, value: current_user.email %>
+        <div class="actions">
+          <%= f.submit "Envoyez un email de confirmation", class:"btn btn-primary" %>
+            </div>
+        })
+        <% end %>
+      <% end %>
 </div>
 </div>
 </div>

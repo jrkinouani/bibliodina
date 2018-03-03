@@ -5,7 +5,12 @@
           <div class="panel panel-default">
           <div class="panel-heading">Qui suis-je</div>
             <div class="panel-body">
-              <h4><%= @user.full_name.capitalize %></h4>
+              <!--<h4><%= @user.full_name.capitalize %></h4>-->
+              <% if @user.confirmed_at %>
+                Email  confirmé
+              <% else %>
+                Email non confirmé
+              <% end %>
               <br>
             </div>
           </div>
@@ -14,7 +19,7 @@
 
             <hr>
             <div class="description row-space-3">
-                  <%= @user.description.capitalize %>
+                  <%= @user.description %>
             </div>
             <hr>
             <h4>Livres (<%= @books.length %>)</h4><br>

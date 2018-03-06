@@ -1,6 +1,6 @@
 <p>Bonjour <%= @user.full_name %> !</p>
 
 <p>Votre livre <%= @book.title%> a une nouvelle réservation du
-  du <%= @reservation.start_date_strftime('%d.%m.%y') %>
-  au <%= @reservation.end_date_strftime('%d.%m.%y') %>
+  du <%= @reservation.start_date.strftime('%d.%m.%y') %>
+  au <%= @reservation.end_date.strftime('%d.%m.%y') %>
 </p>

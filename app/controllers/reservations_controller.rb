@@ -23,7 +23,10 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = current_user.reservations.create(reservation_params)
+    if @reservation.save
+      AppMailer.new_reservation(Book.find(@reservation.book_id), @reservation).deliver_now
     redirect_to  @reservation.book, notice: "Votre réservation a été acceptée"
+    end
   end
 
   def vos_emprunts

@@ -1,6 +1,20 @@
-<p>Bonjour <%= @user.full_name %> !</p>
+<p>Assalamou aleykoum <%= @user.full_name %> !</p>
 
-<p>Votre livre <%= @book.title%> a une nouvelle réservation 
+<p>Votre livre <%= @book.title%> a été réservé <br>
+   par <%= @reservation.user.full_name %> <br>
   du <%= @reservation.start_date.strftime('%d.%m.%y') %>
   au <%= @reservation.end_date.strftime('%d.%m.%y') %>
+</p>
+
+<br>
+<h3>Comment procéder pour l'échange de livres ?</h3>
+<p>
+Le jour convenu lors de la réservation, apportez votre livre au collège.<br>
+Faîtes un état des lieux avec l'emprunteur : indiquez s'il est déchiré,
+abîmé...<br> Quand votre livre vous est rendu, vérifiez avec votre camarade
+s'il est dans le même état.
+</p>
+<br><br>
+<p>
+L'équipe de biblioruncontact.
 </p>

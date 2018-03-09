@@ -1,9 +1,10 @@
 <p>Assalamou aleykoum <%= @user.full_name %> !</p>
 
 <p>Votre livre <%= @book.title%> a été réservé <br>
-   par <%= @reservation.user.full_name %> <br>
+   par <%= @reservation.user.full_name %><br>
   du <%= @reservation.start_date.strftime('%d.%m.%y') %>
-  au <%= @reservation.end_date.strftime('%d.%m.%y') %>
+  au <%= @reservation.end_date.strftime('%d.%m.%y') %>.
+
 </p>
 
 <br>

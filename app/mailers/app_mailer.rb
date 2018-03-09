@@ -4,7 +4,7 @@ class AppMailer < ActionMailer::Base
     @user = User.find(book.user_id)
     @reservation = reservation
     @book = book
-    mail(from: 'biblioruncontact@gmail.com', to: @user.email, subject: "Nouvelle réservation !")
+    mail(from: 'biblioruncontact@gmail.com', to: @user.email, subjectt: "Nouvelle réservation !")
 
   end
 

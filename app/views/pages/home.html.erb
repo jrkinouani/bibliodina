@@ -3,8 +3,14 @@
        <div class="container">
          <div class="row">
            <div class="text-center">
-             <h1 class="brand-heading"></h1>
-             <p class="intro-text">Partagez, empruntez, lisez !</p>
+             <ul class="nav navbar-nav navbar text-center" id="navabar-book">
+               <li><%= link_to "Tous les livres", root_path %></li>
+                <% Genre.all.each do |genre| %>
+                 <li><%= link_to genre.name, all_path( genre: genre.name) %></li>
+                <% end%>
+             </ul>
+             <!--<h1 class="brand-heading"></h1>
+             <p class="intro-text">Partagez, empruntez, lisez !</p>-->
            </div>
          </div>
        </div>
@@ -12,12 +18,36 @@
 </header>
 
 <div class="container">
-  <ul class="nav navbar-nav navbar" id="navabar-book">
+  <!--<ul class="nav navbar-nav navbar" id="navabar-book">
     <li><%= link_to "Tous les livres", root_path %></li>
      <% Genre.all.each do |genre| %>
       <li><%= link_to genre.name, all_path( genre: genre.name) %></li>
      <% end%>
-  </ul>
+  </ul>-->
+
+  <div class="row" id="content_image_home">
+    <div class="text-center">
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <img class="rounded-circle" src="/iconmonstr-share.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>Partagez</h2>
+      <p class="text_img">Faîtes découvrir les livres de votre bibliothèque à vos camarades </p>
+
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <img class="carre" src="/iconmonstr-check.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>Empruntez</h2>
+      <p class="text_img">Choisissez une date d'emprunt  <br>et donnez vous rendez-vous au collège </p>
+
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <img class="rounded-circle" src="/iconmonstr-book.png" alt="Generic placeholder image" width="140" height="140">
+      <h2>Lisez</h2>
+      <p class="text_img">Bonne lecture ! Une fois terminée, <br> laissez une note et un commentaire. </p>
+
+    </div><!-- /.col-lg-4 -->
+  </div>
+  </div><!-- /.row -->
+
 
 
 <div class="row">

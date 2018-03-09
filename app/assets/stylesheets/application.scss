@@ -286,6 +286,15 @@ h3.full_name
   display: block;
 
   }
+  header
+  {
+    margin-bottom: 60px;
+  }
+  #content_image_home
+  {
+      margin-bottom: 30px;
+  }
+
   /*page index */
   .btn-primary.btn {
     border: 1px solid #ff5a5f;
@@ -439,6 +448,20 @@ button.btn.btn--success.search-discover__submit
     height: 50px;
 }
 /*end */
+
+img.rounded-circle, img.carre
+{
+  height: 30%;
+  width: 30%;
+  color: #FF668F;
+}
+.text_img
+{
+  font-size: 18px;
+}
+.rounded-circle {
+    border-radius:0%!important;
+}
 /*footer */
 #footer
 {

@@ -2,6 +2,7 @@ class PagesController < ApplicationController
   def home
     #@books = Book.all
     @books = Book.order("RANDOM()")
+    @booker = Book.count
 
   end
 

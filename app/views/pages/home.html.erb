@@ -1,4 +1,4 @@
-<header class="masthead">
+<!--<header class="masthead">
      <div class="intro-body">
        <div class="container-fluid">
          <div class="row">
@@ -13,9 +13,9 @@
          </div>
        </div>
      </div>
-</header>
+</header>-->
 
-<div class="container">
+<div class="container-fluid">
   <!--<ul class="nav navbar-nav navbar" id="navabar-book">
     <li><%= link_to "Tous les livres", root_path %></li>
      <% Genre.all.each do |genre| %>
@@ -50,6 +50,17 @@
   <div class="text-center">
     <h2 class="booker">Il y a <%= @booker%> livres sur Bibliorun </h2>
   </div>
+  <div class="col-lg-2">
+
+      <!--<li><%= link_to "Tous les livres", root_path %></li>-->
+      <h3 class="titre-genre">Tous les genres</h3>
+       <% Genre.all.each do |genre| %>
+        <li class="link_genre"><%= link_to genre.name, all_path( genre: genre.name) %></li>
+       <% end%>
+
+  </div>
+
+  <div class="col-lg-10 col-md-10">
   <% @books.each do |book| %>
       <div class="col-lg-3  col-md-3 "  id="row_book">
         <div class="text-center">
@@ -60,5 +71,6 @@
           <h5 class="full_name"> Ajouté par <%= book.user.full_name %></h5>
         </div>
     <% end %>
+  </div>
  </div>
 </div>

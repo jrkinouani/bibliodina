@@ -293,6 +293,7 @@ h3.full_name
   #content_image_home
   {
       margin-bottom: 30px;
+      margin-top: 50px;
   }
 
   /*page index */
@@ -324,6 +325,13 @@ h2.booker
 {
     font-size: 23px;
     font-weight: normal;
+}
+.link_genre
+{
+    list-style-type: none;
+    font-size: 18px;
+    padding-left: 15px;
+    margin-bottom: 15px;
 }
 .card-img-top
 {
